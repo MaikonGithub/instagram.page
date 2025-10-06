@@ -14,68 +14,57 @@
     <div class="particles"></div>
     
     <div class="app-window">
-        <!-- Header da janela -->
-        <header class="window-header">
-            <div class="window-controls">
-                <span class="control red"></span>
-                <span class="control yellow"></span>
-                <span class="control green"></span>
+        <!-- Sidebar acoplado ao app-window -->
+        <nav class="sidebar" id="sidebar">
+            <div class="menu-section">
+                <h3 class="menu-title">Navegação</h3>
+                <ul class="menu-list">
+                    <li class="menu-item active" data-section="profile">
+                        <span class="menu-icon">👤</span>
+                        <span class="menu-text">Profile</span>
+                    </li>
+                    <li class="menu-item" data-section="repositories">
+                        <span class="menu-icon">📁</span>
+                        <span class="menu-text">Repositórios</span>
+                    </li>
+                    <li class="menu-item" data-section="projects">
+                        <span class="menu-icon">🚀</span>
+                        <span class="menu-text">Projetos</span>
+                    </li>
+                    <li class="menu-item" data-section="contact">
+                        <span class="menu-icon">📞</span>
+                        <span class="menu-text">Contato</span>
+                    </li>
+                </ul>
             </div>
-            <div class="window-title">Maikon.swift</div>
-        </header>
-
+            
+            <div class="menu-section">
+                <h3 class="menu-title">Redes Sociais</h3>
+                <ul class="menu-list">
+                    <li class="menu-item social" data-link="https://linkedin.com">
+                        <span class="menu-icon">💼</span>
+                        <span class="menu-text">LinkedIn</span>
+                    </li>
+                    <li class="menu-item social" data-link="https://github.com">
+                        <span class="menu-icon">🐙</span>
+                        <span class="menu-text">GitHub</span>
+                    </li>
+                    <li class="menu-item social" data-link="https://twitter.com">
+                        <span class="menu-icon">🐦</span>
+                        <span class="menu-text">Twitter</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="menu-section">
+                <h3 class="menu-title">Download</h3>
+                <button class="download-btn" data-download="cv.pdf">
+                    <span class="menu-icon">📄</span>
+                    <span class="menu-text">Currículo PDF</span>
+                </button>
+            </div>
+        </nav>
         <div class="app-content">
-            <!-- Menu lateral -->
-            <nav class="sidebar" id="sidebar">
-                <div class="menu-section">
-                    <h3 class="menu-title">Navegação</h3>
-                    <ul class="menu-list">
-                        <li class="menu-item active" data-section="profile">
-                            <span class="menu-icon">👤</span>
-                            <span class="menu-text">Profile</span>
-                        </li>
-                        <li class="menu-item" data-section="repositories">
-                            <span class="menu-icon">📁</span>
-                            <span class="menu-text">Repositórios</span>
-                        </li>
-                        <li class="menu-item" data-section="projects">
-                            <span class="menu-icon">🚀</span>
-                            <span class="menu-text">Projetos</span>
-                        </li>
-                        <li class="menu-item" data-section="contact">
-                            <span class="menu-icon">📞</span>
-                            <span class="menu-text">Contato</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="menu-section">
-                    <h3 class="menu-title">Redes Sociais</h3>
-                    <ul class="menu-list">
-                        <li class="menu-item social" data-link="https://linkedin.com">
-                            <span class="menu-icon">💼</span>
-                            <span class="menu-text">LinkedIn</span>
-                        </li>
-                        <li class="menu-item social" data-link="https://github.com">
-                            <span class="menu-icon">🐙</span>
-                            <span class="menu-text">GitHub</span>
-                        </li>
-                        <li class="menu-item social" data-link="https://twitter.com">
-                            <span class="menu-icon">🐦</span>
-                            <span class="menu-text">Twitter</span>
-                        </li>
-                    </ul>
-                </div>
-                
-                <div class="menu-section">
-                    <h3 class="menu-title">Download</h3>
-                    <button class="download-btn" data-download="cv.pdf">
-                        <span class="menu-icon">📄</span>
-                        <span class="menu-text">Currículo PDF</span>
-                    </button>
-                </div>
-            </nav>
-
             <!-- Área de conteúdo principal -->
             <main class="content-area">
                 <div class="content-header">
