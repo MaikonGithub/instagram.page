@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maikon.swift - iOS Developer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Partículas de fundo -->
+    <div class="particles"></div>
+    
+    <div class="app-window">
+        <!-- Header da janela -->
+        <header class="window-header">
+            <div class="window-controls">
+                <span class="control red"></span>
+                <span class="control yellow"></span>
+                <span class="control green"></span>
+            </div>
+            <div class="window-title">Maikon.swift</div>
+        </header>
+
+        <div class="app-content">
+            <!-- Menu lateral -->
+            <nav class="sidebar" id="sidebar">
+                <div class="menu-section">
+                    <h3 class="menu-title">Navegação</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item active" data-section="profile">
+                            <span class="menu-icon">👤</span>
+                            <span class="menu-text">Profile</span>
+                        </li>
+                        <li class="menu-item" data-section="repositories">
+                            <span class="menu-icon">📁</span>
+                            <span class="menu-text">Repositórios</span>
+                        </li>
+                        <li class="menu-item" data-section="projects">
+                            <span class="menu-icon">🚀</span>
+                            <span class="menu-text">Projetos</span>
+                        </li>
+                        <li class="menu-item" data-section="contact">
+                            <span class="menu-icon">📞</span>
+                            <span class="menu-text">Contato</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <h3 class="menu-title">Redes Sociais</h3>
+                    <ul class="menu-list">
+                        <li class="menu-item social" data-link="https://linkedin.com">
+                            <span class="menu-icon">💼</span>
+                            <span class="menu-text">LinkedIn</span>
+                        </li>
+                        <li class="menu-item social" data-link="https://github.com">
+                            <span class="menu-icon">🐙</span>
+                            <span class="menu-text">GitHub</span>
+                        </li>
+                        <li class="menu-item social" data-link="https://twitter.com">
+                            <span class="menu-icon">🐦</span>
+                            <span class="menu-text">Twitter</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="menu-section">
+                    <h3 class="menu-title">Download</h3>
+                    <button class="download-btn" data-download="cv.pdf">
+                        <span class="menu-icon">📄</span>
+                        <span class="menu-text">Currículo PDF</span>
+                    </button>
+                </div>
+            </nav>
+
+            <!-- Área de conteúdo principal -->
+            <main class="content-area">
+                <div class="content-header">
+                    <button class="sidebar-toggle" id="sidebar-toggle">
+                        <span class="toggle-icon">☰</span>
+                    </button>
+                    <h2 class="section-title" id="section-title">Profile</h2>
+                </div>
+                
+                <div class="content-body" id="content-body">
+                    <!-- Seção Profile -->
+                    <div class="content-section active" id="profile-content">
+                        <div class="code-content">
+                            <div class="line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+                            </div>
+                            
+                            <div class="code-lines">
+                                <div class="code-line"><span class="keyword">import</span> <span class="string">Foundation</span></div>
+                                <div class="code-line"><span class="keyword">import</span> <span class="string">SwiftUI</span></div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line comment">// MARK: - Developer Profile</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">let</span> <span class="variable">maikon</span> = <span class="type">Developer</span>(</div>
+                                <div class="code-line indent-1"><span class="variable">name</span>: <span class="string">"Maikon"</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">role</span>: <span class="string">"iOS Developer"</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">experience</span>: <span class="number">5</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">location</span>: <span class="string">"Brasil"</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">skills</span>: [</div>
+                                <div class="code-line indent-2"><span class="string">"Swift"</span>,</div>
+                                <div class="code-line indent-2"><span class="string">"SwiftUI"</span>,</div>
+                                <div class="code-line indent-2"><span class="string">"UIKit"</span>,</div>
+                                <div class="code-line indent-2"><span class="string">"Core Data"</span>,</div>
+                                <div class="code-line indent-2"><span class="string">"Combine"</span>,</div>
+                                <div class="code-line indent-2"><span class="string">"Xcode"</span></div>
+                                <div class="code-line indent-1">]</div>
+                                <div class="code-line">)</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">func</span> <span class="function">introduce</span>() -> <span class="type">String</span> {</div>
+                                <div class="code-line indent-1"><span class="keyword">return</span> <span class="string">"Olá! Sou \(maikon.name), \(maikon.role) com \(maikon.experience) anos de experiência."</span></div>
+                                <div class="code-line">}</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="function">print</span>(<span class="function">introduce</span>())</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Repositórios -->
+                    <div class="content-section" id="repositories-content">
+                        <div class="code-content">
+                            <div class="line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                            </div>
+                            
+                            <div class="code-lines">
+                                <div class="code-line comment">// MARK: - GitHub Repositories</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">let</span> <span class="variable">repositories</span> = [</div>
+                                <div class="code-line indent-1"><span class="type">Repository</span>(</div>
+                                <div class="code-line indent-2"><span class="variable">name</span>: <span class="string">"instagram.page"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">language</span>: <span class="string">"Swift"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">stars</span>: <span class="number">42</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">description</span>: <span class="string">"Portfolio iOS Developer"</span></div>
+                                <div class="code-line indent-1">),</div>
+                                <div class="code-line indent-1"><span class="type">Repository</span>(</div>
+                                <div class="code-line indent-2"><span class="variable">name</span>: <span class="string">"swift-app"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">language</span>: <span class="string">"Swift"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">stars</span>: <span class="number">28</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">description</span>: <span class="string">"iOS App with SwiftUI"</span></div>
+                                <div class="code-line indent-1">)</div>
+                                <div class="code-line">]</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">for</span> <span class="variable">repo</span> <span class="keyword">in</span> <span class="variable">repositories</span> {</div>
+                                <div class="code-line indent-1"><span class="function">print</span>(<span class="string">"📁 \(repo.name): \(repo.description)"</span>)</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Projetos -->
+                    <div class="content-section" id="projects-content">
+                        <div class="code-content">
+                            <div class="line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                                <span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span><span>28</span><span>29</span><span>30</span>
+                                <span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span><span>37</span><span>38</span><span>39</span><span>40</span>
+                            </div>
+                            
+                            <div class="code-lines">
+                                <div class="code-line comment">// MARK: - Portfolio Projects</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">let</span> <span class="variable">projects</span> = [</div>
+                                <div class="code-line indent-1"><span class="type">Project</span>(</div>
+                                <div class="code-line indent-2"><span class="variable">name</span>: <span class="string">"FitLife"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">type</span>: <span class="string">"Fitness App"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">description</span>: <span class="string">"App de fitness com tracking avançado e IA"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">technologies</span>: [<span class="string">"SwiftUI"</span>, <span class="string">"Core Data"</span>, <span class="string">"HealthKit"</span>],</div>
+                                <div class="code-line indent-2"><span class="variable">appStoreURL</span>: <span class="string">"https://apps.apple.com"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">githubURL</span>: <span class="string">"https://github.com"</span></div>
+                                <div class="code-line indent-1">),</div>
+                                <div class="code-line indent-1"><span class="type">Project</span>(</div>
+                                <div class="code-line indent-2"><span class="variable">name</span>: <span class="string">"SocialHub"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">type</span>: <span class="string">"Social Network"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">description</span>: <span class="string">"Rede social com features inovadoras"</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">technologies</span>: [<span class="string">"SwiftUI"</span>, <span class="string">"Combine"</span>, <span class="string">"Firebase"</span>],</div>
+                                <div class="code-line indent-2"><span class="variable">appStoreURL</span>: <span class="keyword">nil</span>,</div>
+                                <div class="code-line indent-2"><span class="variable">githubURL</span>: <span class="string">"https://github.com"</span></div>
+                                <div class="code-line indent-1">)</div>
+                                <div class="code-line">]</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">for</span> <span class="variable">project</span> <span class="keyword">in</span> <span class="variable">projects</span> {</div>
+                                <div class="code-line indent-1"><span class="function">print</span>(<span class="string">"📱 \(project.name): \(project.description)"</span>)</div>
+                                <div class="code-line">}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Seção Contato -->
+                    <div class="content-section" id="contact-content">
+                        <div class="code-content">
+                            <div class="line-numbers">
+                                <span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span>
+                                <span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span><span>19</span><span>20</span>
+                            </div>
+                            
+                            <div class="code-lines">
+                                <div class="code-line comment">// MARK: - Contact Information</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="keyword">let</span> <span class="variable">contact</span> = <span class="type">ContactInfo</span>(</div>
+                                <div class="code-line indent-1"><span class="variable">email</span>: <span class="string">"contato@maikon.dev"</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">github</span>: <span class="string">"github.com/maikon"</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">linkedin</span>: <span class="string">"linkedin.com/in/maikon"</span>,</div>
+                                <div class="code-line indent-1"><span class="variable">twitter</span>: <span class="string">"@maikon_dev"</span></div>
+                                <div class="code-line">)</div>
+                                <div class="code-line empty"></div>
+                                <div class="code-line"><span class="function">print</span>(<span class="string">"📧 Email: \(contact.email)"</span>)</div>
+                                <div class="code-line"><span class="function">print</span>(<span class="string">"🐙 GitHub: \(contact.github)"</span>)</div>
+                                <div class="code-line"><span class="function">print</span>(<span class="string">"💼 LinkedIn: \(contact.linkedin)"</span>)</div>
+                                <div class="code-line"><span class="function">print</span>(<span class="string">"🐦 Twitter: \(contact.twitter)"</span>)</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
