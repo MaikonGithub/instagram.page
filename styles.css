@@ -466,7 +466,7 @@ body {
     height: 100%;
     background: rgba(13, 17, 23, 0.9);
     border-right: 1px solid #30363d;
-    padding: 20px 0;
+    padding: 20px 10px 20px 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -476,14 +476,14 @@ body {
 }
 
 .line-numbers span {
-    height: 24px;
-    line-height: 24px;
+    height: 22px;
+    line-height: 22px;
     padding: 0 8px;
 }
 
 /* Linhas de código */
 .code-lines {
-    margin-left: 20px;
+    margin-left: 70px;
     padding: 20px;
     font-size: 14px;
     line-height: 24px;
@@ -500,7 +500,7 @@ body {
 
 /* Syntax highlighting com cores autênticas do Swift/Xcode */
 .code-lines {
-    margin-left: 20px;
+    margin-left: 70px;
     padding: 20px;
     font-size: 14px;
     line-height: 24px;
@@ -871,6 +871,7 @@ body {
     }
     
     .code-lines {
+        margin-left: 40px;
         font-size: 10px;
         padding: 10px;
     }
@@ -878,6 +879,7 @@ body {
     .line-numbers {
         width: 30px;
         font-size: 8px;
+        padding: 10px 5px 10px 0;
     }
 }
 
