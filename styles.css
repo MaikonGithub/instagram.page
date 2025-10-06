@@ -484,7 +484,7 @@ body {
 
 /* Linhas de código */
 .code-lines {
-    margin-left: 60px;
+    margin-left: 20px;
     padding: 20px;
     font-size: 14px;
     line-height: 24px;
@@ -501,7 +501,7 @@ body {
 
 /* Syntax highlighting com cores autênticas do Swift/Xcode */
 .code-lines {
-    margin-left: 60px;
+    margin-left: 20px;
     padding: 20px;
     font-size: 14px;
     line-height: 24px;
