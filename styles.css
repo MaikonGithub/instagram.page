@@ -369,6 +369,11 @@ body {
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
+    margin-bottom: 8px;
+}
+
+.download-btn:last-child {
+    margin-bottom: 0;
 }
 
 .download-btn:hover {

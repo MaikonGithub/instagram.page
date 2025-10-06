@@ -30,8 +30,39 @@ function init() {
     setupNavigation();
     setupSidebarToggle();
     restoreSidebarState();
+    setupDownloads();
     
     console.log('✅ Portfólio inicializado com sucesso!');
+}
+
+// Sistema de downloads
+function setupDownloads() {
+    const downloadButtons = document.querySelectorAll('.download-btn');
+    
+    downloadButtons.forEach(button => {
+        button.addEventListener('click', (e) => {
+            e.preventDefault();
+            const filePath = button.getAttribute('data-download');
+            downloadFile(filePath);
+        });
+    });
+}
+
+function downloadFile(filePath) {
+    // Criar link temporário para download
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = filePath.split('/').pop(); // Nome do arquivo
+    link.target = '_blank';
+    
+    // Adicionar ao DOM temporariamente
+    document.body.appendChild(link);
+    link.click();
+    
+    // Remover do DOM
+    document.body.removeChild(link);
+    
+    console.log(`📄 Download iniciado: ${filePath}`);
 }
 
 // Sistema de partículas
