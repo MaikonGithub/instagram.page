@@ -215,10 +215,10 @@ function toggleSidebar() {
 
 // Restaurar estado do sidebar
 function restoreSidebarState() {
-    // Sempre começar expandido por padrão
-    sidebarCollapsed = false;
-    elements.sidebar.classList.remove('collapsed');
-    elements.sidebarToggle.classList.remove('collapsed');
+    // Começar recolhido por padrão
+    sidebarCollapsed = true;
+    elements.sidebar.classList.add('collapsed');
+    elements.sidebarToggle.classList.add('collapsed');
     autoCollapseEnabled = true;
 }
 
