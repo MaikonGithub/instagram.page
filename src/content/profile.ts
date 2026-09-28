@@ -1,3 +1,4 @@
+import { publicPath } from "@/lib/publicPath";
 import type { AppIconName, SiteProfile } from "@/lib/types";
 
 export const profile: SiteProfile = {
@@ -16,20 +17,20 @@ export const profile: SiteProfile = {
   instagram: "https://www.instagram.com/maikon.ferreira_/",
   certificates:
     "https://cursos.alura.com.br/user/maikon-ferreirayt/fullCertificate/b08cf45f113af50c782b66e59ca6b2fc",
-  photo: "/photos/profile/Maikon-picture.png",
-  cvPt: "/documents/Curriculo.pdf",
-  cvEn: "/documents/Resume.pdf",
+  photo: publicPath("/photos/profile/Maikon-picture.png"),
+  cvPt: publicPath("/documents/Curriculo.pdf"),
+  cvEn: publicPath("/documents/Resume.pdf"),
   islandLabel: "iOS Developer",
   contactLabel: "Fale comigo",
   languages: ["Português — nativo", "Inglês — avançado"],
 };
 
 export const appIcons: Record<AppIconName, string> = {
-  home: "/icons/HOME.png",
-  mail: "/icons/MAIL.png",
-  phone: "/icons/PHONE.png",
-  github: "/icons/GITHUB.png",
-  linkedin: "/icons/LINKEDIN.png",
-  resume: "/icons/RESUME.png",
-  testflight: "/icons/TESTFLIGHT.png",
+  home: publicPath("/icons/HOME.png"),
+  mail: publicPath("/icons/MAIL.png"),
+  phone: publicPath("/icons/PHONE.png"),
+  github: publicPath("/icons/GITHUB.png"),
+  linkedin: publicPath("/icons/LINKEDIN.png"),
+  resume: publicPath("/icons/RESUME.png"),
+  testflight: publicPath("/icons/TESTFLIGHT.png"),
 };

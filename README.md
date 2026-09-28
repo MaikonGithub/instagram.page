@@ -27,7 +27,7 @@ Abre [http://localhost:3000](http://localhost:3000).
 npm run build
 ```
 
-Artefatos em `out/` — publicar essa pasta no provedor atual sem mudar o domínio.
+Artefatos em `out/`. O push em `main` dispara a Action que publica essa pasta no GitHub Pages (`https://maikongithub.github.io/instagram.page/`).
 
 ## Camadas
 
