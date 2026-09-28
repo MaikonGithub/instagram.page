@@ -1,65 +1,58 @@
-# Maikon - iOS Developer Portfolio
+# Maikon Ferreira — Portfolio dual macOS / iOS
 
-Uma página de portfólio profissional com design inspirado no Xcode (tema escuro) e efeito parallax.
+Portfólio entrevista-first com metáfora adaptativa:
 
-## 🚀 Características
+- **Desktop (≥768px):** Menu Bar, janela About This Mac, widgets, Dock
+- **Mobile (<768px):** Dynamic Island, stack vertical, bottom sheet, Tab Bar
 
-- **Design Mobile-First**: Otimizado para dispositivos móveis (formato vertical)
-- **Tema Xcode**: Cores e tipografia inspiradas na IDE da Apple
-- **Efeito Parallax**: Transição suave entre bio e portfólio no scroll
-- **Tecnologias Simples**: HTML, CSS e JavaScript vanilla
-- **Responsivo**: Adaptado para diferentes tamanhos de tela
+## Stack
 
-## 🎨 Design
+- Next.js (App Router)
+- Tailwind CSS
+- Framer Motion
+- Export estático (`output: "export"`) — mesmo host/URL
 
-- **Cores**: Fundo escuro (#1e1e1e), texto claro (#ffffff), acentos azuis (#007AFF)
-- **Tipografia**: SF Mono (fonte monospace do macOS)
-- **Efeitos**: Gradientes, sombras e transições suaves
-- **Interatividade**: Hover effects e animações
+## Desenvolvimento
 
-## 📱 Funcionalidades
-
-- **Bio Profissional**: Seção com informações pessoais e profissionais
-- **Portfólio**: Grid de projetos com links
-- **Contato**: Links para redes sociais e contato
-- **Navegação**: Scroll suave, teclas de seta, swipe em mobile
-
-## 🛠️ Tecnologias
-
-- HTML5
-- CSS3 (Flexbox, Grid, Animations)
-- JavaScript ES6+ (Vanilla)
-- Fontes: SF Mono (Google Fonts)
-
-## 📂 Estrutura
-
-```
-instagram.page/
-├── index.html      # Estrutura principal
-├── styles.css      # Estilos e animações
-├── script.js       # Lógica do parallax
-└── README.md       # Documentação
+```bash
+npm install
+npm run dev
 ```
 
-## 🚀 Como usar
+Abre [http://localhost:3000](http://localhost:3000).
 
-1. Clone o repositório
-2. Abra `index.html` no navegador
-3. Teste o scroll e efeitos parallax
+## Build estático
 
-## 📝 Personalização
+```bash
+npm run build
+```
 
-- Edite o texto em `index.html`
-- Modifique cores em `styles.css`
-- Ajuste efeitos parallax em `script.js`
+Artefatos em `out/` — publicar essa pasta no provedor atual sem mudar o domínio.
 
-## 🎯 Próximos Passos
+## Camadas
 
-- [ ] Adicionar projetos reais
-- [ ] Implementar analytics
-- [ ] Otimizar performance
-- [ ] Adicionar mais animações
+- `src/app` — rotas
+- `src/components/shell` — composição da página
+- `src/components/sections` — seções
+- `src/components/chrome` — chrome desktop e mobile
+- `src/components/ui` — primitivos
+- `src/content` — dados
+- `src/hooks` — estado de cliente
+- `src/lib` — tipos
 
----
+## Conteúdo editável
 
-Desenvolvido com ❤️ inspirado no Xcode
+- Perfil: [`src/content/profile.ts`](src/content/profile.ts)
+- About e links: [`src/content/about.ts`](src/content/about.ts)
+- Experiência: [`src/content/experience.ts`](src/content/experience.ts)
+- Widgets: [`src/content/widgets.ts`](src/content/widgets.ts)
+- Dock: [`src/content/navigation.ts`](src/content/navigation.ts)
+- Projetos: [`src/content/projects.json`](src/content/projects.json)
+- Ícones: [`public/icons/`](public/icons/)
+- Foto de perfil: [`public/photos/profile/`](public/photos/profile/)
+- Fotos Shell Box: [`public/photos/shellbox/`](public/photos/shellbox/)
+- Fotos DeckBuilder: [`public/photos/deckbuilder/`](public/photos/deckbuilder/)
+- Fotos DogBreedExplorer: [`public/photos/dogbreeder/`](public/photos/dogbreeder/)
+- CVs: [`public/documents/`](public/documents/)
+
+Textos e imagens são mocks substituíveis.

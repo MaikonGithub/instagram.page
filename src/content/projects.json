@@ -1,0 +1,50 @@
+[
+  {
+    "id": "ap-ios",
+    "title": "AP Digital",
+    "subtitle": "App Shell Box, da AP Digital com a Raízen",
+    "badges": ["Swift", "VIP", "MVVM", "MVC"],
+    "highlight": "App iOS nativo Shell Box, desenvolvido pela AP Digital em parceria com a Raízen e para a Raízen — em produção, da implementação à manutenção, em Swift com VIP, MVVM e MVC.",
+    "ctaLabel": "Ver LinkedIn",
+    "ctaUrl": "https://www.linkedin.com/in/maikonferreiradev/",
+    "screenshots": {
+      "frame": "photo",
+      "portrait": [
+        "/photos/shellbox/AP1.jpg",
+        "/photos/shellbox/AP2.jpg",
+        "/photos/shellbox/AP3.jpg",
+        "/photos/shellbox/AP4.jpg"
+      ]
+    }
+  },
+  {
+    "id": "deckbuilder",
+    "title": "DeckBuilder Brasil",
+    "subtitle": "App de Magic: The Gathering para Mac",
+    "badges": ["Swift", "macOS", "Scryfall"],
+    "highlight": "Catálogo local, mesa de deck e histórico do Arena a partir do Player.log. Sem servidor. Não é produto oficial da Wizards of the Coast.",
+    "screenshots": {
+      "frame": "photo",
+      "portrait": [
+        "/photos/deckbuilder/db1.png",
+        "/photos/deckbuilder/db2.png",
+        "/photos/deckbuilder/db3.png",
+        "/photos/deckbuilder/db4.png"
+      ]
+    }
+  },
+  {
+    "id": "dogbreed",
+    "title": "DogBreedExplorer",
+    "subtitle": "Teste técnico de lista em SwiftUI",
+    "badges": ["SwiftUI", "REST", "MVVM"],
+    "highlight": "Lista de raças e tela de detalhe consumindo a Dog CEO API, uma API pública. Pull-to-refresh, loading, erro e cache de imagens.",
+    "githubUrl": "https://github.com/MaikonGithub/DogBreedExplorer",
+    "screenshots": {
+      "portrait": [
+        "/photos/dogbreeder/dog1.png",
+        "/photos/dogbreeder/dog2.png"
+      ]
+    }
+  }
+]
