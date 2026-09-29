@@ -2,17 +2,16 @@
 
 import { motion } from "framer-motion";
 import { AboutPanel } from "@/components/sections/AboutPanel";
-import { AppIcon } from "@/components/ui/AppIcon";
 import { profile } from "@/content/profile";
-import type { AboutTab, AppIconName } from "@/lib/types";
+import type { AboutTab } from "@/lib/types";
 
 const ctaButtonClass =
-  "btn glass touch-target inline-flex h-[52px] items-center justify-center gap-2.5 rounded-full pr-6 pl-2.5 text-sm font-medium";
+  "btn glass touch-target inline-flex h-[52px] items-center justify-center rounded-full px-6 text-sm font-medium";
 
-const heroActions: { label: string; href: string; icon: AppIconName; external?: boolean }[] = [
-  { label: "E-mail", href: `mailto:${profile.email}`, icon: "mail" },
-  { label: "LinkedIn", href: profile.linkedin, icon: "linkedin", external: true },
-  { label: "WhatsApp", href: profile.whatsapp, icon: "phone", external: true },
+const heroActions: { label: string; href: string; external?: boolean }[] = [
+  { label: "E-mail", href: `mailto:${profile.email}` },
+  { label: "LinkedIn", href: profile.linkedin, external: true },
+  { label: "WhatsApp", href: profile.whatsapp, external: true },
 ];
 
 type HeroProps = {
@@ -65,7 +64,6 @@ export function Hero({
               rel={action.external ? "noreferrer" : undefined}
               className={ctaButtonClass}
             >
-              <AppIcon name={action.icon} size={32} className="h-8 w-8" />
               {action.label}
             </a>
           ))}

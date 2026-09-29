@@ -34,6 +34,7 @@ export interface ExperienceItem {
   period: string;
   bullets: string[];
   achievements: string[];
+  duties?: string[];
 }
 
 export interface SiteProfile {

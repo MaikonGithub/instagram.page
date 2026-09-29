@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { experience } from "@/content/experience";
 
 type ExperienceSectionProps = {
@@ -7,6 +8,8 @@ type ExperienceSectionProps = {
 };
 
 export function ExperienceSection({ isMobile }: ExperienceSectionProps) {
+  const [openId, setOpenId] = useState<string | null>(null);
+
   return (
     <section id="experience" className="mx-auto w-full max-w-6xl px-5 pb-8 pt-2">
       <div className={`mb-5 ${isMobile ? "text-center" : ""}`}>
@@ -51,6 +54,26 @@ export function ExperienceSection({ isMobile }: ExperienceSectionProps) {
                 </span>
               ))}
             </div>
+
+            {job.duties && job.duties.length > 0 ? (
+              <div className="mt-4">
+                <button
+                  type="button"
+                  aria-expanded={openId === job.id}
+                  onClick={() => setOpenId((current) => (current === job.id ? null : job.id))}
+                  className="text-[12px] text-[var(--fg-muted)] underline decoration-transparent underline-offset-4 transition hover:text-[var(--fg)] hover:decoration-current"
+                >
+                  {openId === job.id ? "Ocultar funções" : "Funções"}
+                </button>
+                {openId === job.id ? (
+                  <ul className="mt-3 space-y-1.5 text-[13px] leading-relaxed text-[var(--fg-muted)]">
+                    {job.duties.map((duty) => (
+                      <li key={duty}>{duty}</li>
+                    ))}
+                  </ul>
+                ) : null}
+              </div>
+            ) : null}
           </article>
         ))}
       </div>

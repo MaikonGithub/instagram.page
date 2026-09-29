@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { FloatingDock } from "@/components/chrome/desktop/FloatingDock";
 import { MenuBar } from "@/components/chrome/desktop/MenuBar";
-import { BottomTabBar } from "@/components/chrome/mobile/BottomTabBar";
+import { HorizontalDock } from "@/components/chrome/mobile/HorizontalDock";
 import { DynamicIsland } from "@/components/chrome/mobile/DynamicIsland";
 import { AboutPanel } from "@/components/sections/AboutPanel";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
@@ -39,7 +39,7 @@ export function PortfolioShell() {
 
       <DynamicIsland isMobile={isMobileVertical} />
 
-      <main className={isMobileVertical ? "pb-24" : "pb-8 pl-28"}>
+      <main className={isMobileVertical ? "pb-28" : "pb-8 pl-28"}>
         <Hero
           isMobile={isMobileVertical}
           aboutTab={aboutTab}
@@ -54,7 +54,7 @@ export function PortfolioShell() {
 
       {isMobileVertical ? (
         <>
-          <BottomTabBar onOpenAbout={() => setSheetOpen(true)} />
+          <HorizontalDock />
           <BottomSheet open={sheetOpen} onClose={() => setSheetOpen(false)}>
             <AboutPanel
               tab={aboutTab}
