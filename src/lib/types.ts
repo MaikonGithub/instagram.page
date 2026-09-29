@@ -21,6 +21,7 @@ export interface ProjectSpec {
   subtitle: string;
   badges: string[];
   highlight: string;
+  note?: string;
   githubUrl?: string;
   ctaLabel?: string;
   ctaUrl?: string;

@@ -1,12 +1,12 @@
 [
   {
     "id": "ap-ios",
-    "title": "AP Digital",
-    "subtitle": "App Shell Box, da AP Digital com a Raízen",
+    "title": "Shell Box",
+    "subtitle": "App da Raízen, desenvolvido na AP Digital",
     "badges": ["Swift", "VIP", "MVVM", "MVC"],
-    "highlight": "App iOS nativo Shell Box, desenvolvido pela AP Digital em parceria com a Raízen e para a Raízen — em produção, da implementação à manutenção, em Swift com VIP, MVVM e MVC.",
-    "ctaLabel": "Ver LinkedIn",
-    "ctaUrl": "https://www.linkedin.com/in/maikonferreiradev/",
+    "highlight": "App iOS nativo Shell Box, da Raízen. Trabalhei nele na AP Digital, contratada pela Raízen — em produção, da implementação à manutenção, em Swift com VIP, MVVM e MVC.",
+    "ctaLabel": "Ver na App Store",
+    "ctaUrl": "https://apps.apple.com/br/app/shell-box-abaste%C3%A7a-e-ganhe/id1037433060",
     "screenshots": {
       "frame": "photo",
       "portrait": [
@@ -23,6 +23,7 @@
     "subtitle": "App de Magic: The Gathering para Mac",
     "badges": ["Swift", "macOS", "Scryfall"],
     "highlight": "Catálogo local, mesa de deck e histórico do Arena a partir do Player.log. Sem servidor. Não é produto oficial da Wizards of the Coast.",
+    "note": "Repositório indisponível. O código não é gratuito.",
     "screenshots": {
       "frame": "photo",
       "portrait": [

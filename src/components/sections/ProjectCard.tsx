@@ -124,6 +124,9 @@ export function ProjectCard({ project, isMobile }: ProjectCardProps) {
             {ctaLabel}
           </a>
         )}
+        {project.note ? (
+          <p className="text-[12px] leading-relaxed text-[var(--fg-muted)]">{project.note}</p>
+        ) : null}
       </div>
     </motion.article>
   );
