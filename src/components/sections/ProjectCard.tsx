@@ -1,6 +1,46 @@
+"use client";
+
+import { useRef } from "react";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { AppIcon } from "@/components/ui/AppIcon";
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
 import type { ProjectSpec } from "@/lib/types";
+
+function Shot({
+  src,
+  alt,
+  className,
+  sizes,
+  parallax,
+  imageClassName,
+}: {
+  src: string;
+  alt: string;
+  className: string;
+  sizes?: string;
+  parallax: boolean;
+  imageClassName: string;
+}) {
+  const frameRef = useRef<HTMLDivElement>(null);
+  const reduceMotion = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: frameRef,
+    offset: ["start end", "end start"],
+  });
+  const y = useTransform(scrollYProgress, [0, 1], parallax && !reduceMotion ? [28, -28] : [0, 0]);
+
+  return (
+    <div ref={frameRef} className={`relative overflow-hidden bg-black/20 ${className}`}>
+      {parallax && !reduceMotion ? (
+        <motion.div style={{ y }} className="absolute inset-x-0 -top-8 h-[calc(100%+64px)]">
+          <ZoomableImage src={src} alt={alt} className={imageClassName} sizes={sizes} />
+        </motion.div>
+      ) : (
+        <ZoomableImage src={src} alt={alt} className={imageClassName} sizes={sizes} />
+      )}
+    </div>
+  );
+}
 
 type ProjectCardProps = {
   project: ProjectSpec;
@@ -12,9 +52,17 @@ export function ProjectCard({ project, isMobile }: ProjectCardProps) {
   const ctaLabel = project.ctaLabel ?? (project.githubUrl ? "View Code on GitHub" : undefined);
   const isGithub = !project.ctaUrl && Boolean(project.githubUrl);
   const isPhoto = project.screenshots.frame === "photo";
+  const reduceMotion = useReducedMotion();
+  const enterY = reduceMotion ? 0 : isMobile ? 56 : 28;
 
   return (
-    <article className="glass squircle overflow-hidden">
+    <motion.article
+      className="glass squircle overflow-hidden"
+      initial={reduceMotion ? false : { opacity: 0, y: enterY, scale: 0.96 }}
+      whileInView={{ opacity: 1, y: 0, scale: 1 }}
+      viewport={{ once: true, amount: 0.25 }}
+      transition={{ duration: 0.7, ease: "easeOut" }}
+    >
       <div
         className={
           isPhoto
@@ -27,9 +75,14 @@ export function ProjectCard({ project, isMobile }: ProjectCardProps) {
         }
       >
         {project.screenshots.portrait.map((src) => (
-          <div
+          <Shot
             key={src}
-            className={`relative overflow-hidden bg-black/20 ${
+            src={src}
+            alt={isPhoto ? project.title : `${project.title} mockup`}
+            parallax={!isMobile}
+            imageClassName={`object-cover ${isPhoto ? "object-center" : ""}`}
+            sizes={isPhoto ? "(max-width: 767px) 240px, 320px" : "180px"}
+            className={
               isPhoto
                 ? isMobile
                   ? "snap-center h-[168px] w-[240px] shrink-0 rounded-2xl"
@@ -37,15 +90,8 @@ export function ProjectCard({ project, isMobile }: ProjectCardProps) {
                 : isMobile
                   ? "snap-center h-[280px] w-[140px] shrink-0 rounded-[28px]"
                   : "aspect-[9/19] rounded-[28px]"
-            }`}
-          >
-            <ZoomableImage
-              src={src}
-              alt={isPhoto ? project.title : `${project.title} mockup`}
-              className={`object-cover ${isPhoto ? "object-center" : ""}`}
-              sizes={isPhoto ? "(max-width: 767px) 240px, 320px" : "180px"}
-            />
-          </div>
+            }
+          />
         ))}
       </div>
 
@@ -79,6 +125,6 @@ export function ProjectCard({ project, isMobile }: ProjectCardProps) {
           </a>
         )}
       </div>
-    </article>
+    </motion.article>
   );
 }

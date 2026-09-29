@@ -1,6 +1,6 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion";
 import { AboutPanel } from "@/components/sections/AboutPanel";
 import { profile } from "@/content/profile";
 import type { AboutTab } from "@/lib/types";
@@ -29,6 +29,20 @@ export function Hero({
   onOpenAbout,
   showInlineAbout,
 }: HeroProps) {
+  const reduceMotion = useReducedMotion();
+  const { scrollY } = useScroll();
+  const distance = isMobile ? 140 : 220;
+  const titleScale = useTransform(
+    scrollY,
+    [0, distance],
+    reduceMotion ? [1, 1] : isMobile ? [1, 0.72] : [1, 0.88],
+  );
+  const titleOpacity = useTransform(
+    scrollY,
+    [0, distance],
+    reduceMotion ? [1, 1] : isMobile ? [1, 0.35] : [1, 0.6],
+  );
+
   return (
     <section
       id="top"
@@ -47,10 +61,12 @@ export function Hero({
         <p className="mb-3 text-sm font-medium tracking-wide text-[var(--accent)]">
           {profile.location}
         </p>
-        <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-          {profile.name}
-        </h1>
-        <p className="mt-2 text-xl text-[var(--fg-muted)] sm:text-2xl">{profile.role}</p>
+        <motion.div style={{ scale: titleScale, opacity: titleOpacity }} className="origin-top">
+          <h1 className="text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
+            {profile.name}
+          </h1>
+          <p className="mt-2 text-xl text-[var(--fg-muted)] sm:text-2xl">{profile.role}</p>
+        </motion.div>
         <p className="mt-4 max-w-lg text-base leading-relaxed text-[var(--fg-muted)] sm:text-lg">
           {profile.objective}
         </p>

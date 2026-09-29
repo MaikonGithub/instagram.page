@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { motion, useReducedMotion } from "framer-motion";
 import { experience } from "@/content/experience";
 
 type ExperienceSectionProps = {
@@ -9,6 +10,8 @@ type ExperienceSectionProps = {
 
 export function ExperienceSection({ isMobile }: ExperienceSectionProps) {
   const [openId, setOpenId] = useState<string | null>(null);
+  const reduceMotion = useReducedMotion();
+  const enterY = reduceMotion ? 0 : isMobile ? 56 : 28;
 
   return (
     <section id="experience" className="mx-auto w-full max-w-6xl px-5 pb-8 pt-2">
@@ -21,7 +24,14 @@ export function ExperienceSection({ isMobile }: ExperienceSectionProps) {
 
       <div className="grid gap-4">
         {experience.map((job) => (
-          <article key={job.id} className="glass squircle p-5 sm:p-6">
+          <motion.article
+            key={job.id}
+            className="glass squircle p-5 sm:p-6"
+            initial={reduceMotion ? false : { opacity: 0, y: enterY, scale: 0.96 }}
+            whileInView={{ opacity: 1, y: 0, scale: 1 }}
+            viewport={{ once: true, amount: 0.35 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+          >
             <div
               className={`flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between ${
                 isMobile ? "text-center sm:text-left" : ""
@@ -74,7 +84,7 @@ export function ExperienceSection({ isMobile }: ExperienceSectionProps) {
                 ) : null}
               </div>
             ) : null}
-          </article>
+          </motion.article>
         ))}
       </div>
     </section>
