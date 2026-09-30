@@ -1,29 +1,10 @@
 "use client";
 
-import { useSyncExternalStore } from "react";
+import { useMediaQuery } from "@/hooks/useMediaQuery";
 
 const MOBILE_QUERY = "(max-width: 767px)";
 
-function subscribe(onStoreChange: () => void) {
-  const media = window.matchMedia(MOBILE_QUERY);
-  media.addEventListener("change", onStoreChange);
-  return () => media.removeEventListener("change", onStoreChange);
-}
-
-function getSnapshot() {
-  return window.matchMedia(MOBILE_QUERY).matches;
-}
-
-function getServerSnapshot() {
-  return false;
-}
-
 export function useViewport() {
-  const isMobileVertical = useSyncExternalStore(
-    subscribe,
-    getSnapshot,
-    getServerSnapshot,
-  );
-
+  const isMobileVertical = useMediaQuery(MOBILE_QUERY);
   return { isMobileVertical };
 }

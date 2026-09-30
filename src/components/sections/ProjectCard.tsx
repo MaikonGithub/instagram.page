@@ -5,6 +5,7 @@ import { motion, useReducedMotion, useScroll, useTransform } from "framer-motion
 import { AppIcon } from "@/components/ui/AppIcon";
 import { ZoomableImage } from "@/components/ui/ZoomableImage";
 import type { ProjectSpec } from "@/lib/types";
+import { cardReveal } from "@/lib/cardReveal";
 
 function Shot({
   src,
@@ -53,15 +54,11 @@ export function ProjectCard({ project, isMobile }: ProjectCardProps) {
   const isGithub = !project.ctaUrl && Boolean(project.githubUrl);
   const isPhoto = project.screenshots.frame === "photo";
   const reduceMotion = useReducedMotion();
-  const enterY = reduceMotion ? 0 : isMobile ? 56 : 28;
 
   return (
     <motion.article
       className="glass squircle overflow-hidden"
-      initial={reduceMotion ? false : { opacity: 0, y: enterY, scale: 0.96 }}
-      whileInView={{ opacity: 1, y: 0, scale: 1 }}
-      viewport={{ once: true, amount: 0.25 }}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      {...cardReveal(reduceMotion, isMobile, 0.25)}
     >
       <div
         className={

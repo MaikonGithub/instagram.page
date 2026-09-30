@@ -10,6 +10,7 @@ import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { Hero } from "@/components/sections/Hero";
 import { Showcase } from "@/components/sections/Showcase";
 import { WidgetsGrid } from "@/components/sections/WidgetsGrid";
+import { ParticleField } from "@/components/chrome/ParticleField";
 import { BottomSheet } from "@/components/ui/BottomSheet";
 import { useTheme } from "@/hooks/useTheme";
 import { useViewport } from "@/hooks/useViewport";
@@ -27,6 +28,7 @@ export function PortfolioShell() {
 
   return (
     <div className="relative min-h-screen">
+      <ParticleField />
       {!isMobileVertical && (
         <MenuBar
           theme={theme}
@@ -39,7 +41,7 @@ export function PortfolioShell() {
 
       <DynamicIsland isMobile={isMobileVertical} />
 
-      <main className={isMobileVertical ? "pb-28" : "pb-8 pl-28"}>
+      <main className={`relative z-10 ${isMobileVertical ? "pb-28" : "pb-8 pl-28"}`}>
         <Hero
           isMobile={isMobileVertical}
           aboutTab={aboutTab}
