@@ -18,6 +18,20 @@
     }
   },
   {
+    "id": "dogbreed",
+    "title": "DogBreedExplorer",
+    "subtitle": "Amostra técnica de lista iOS",
+    "badges": ["SwiftUI", "SwiftData", "SPM", "CI"],
+    "highlight": "Amostra de entrevista: lista raças da The Dog API, guarda uma cópia no aparelho e consulta essa cópia para busca, filtro, ordenação e favorito. O alvo do app só compõe. A regra fica em quatro bibliotecas — Domain, Networking, Storage e Breeds. Sem rede, a cópia permanece. Os testes sobem sem chave e sem chamar a API; o GitHub os roda a cada envio.",
+    "githubUrl": "https://github.com/MaikonGithub/DogBreedExplorer",
+    "screenshots": {
+      "portrait": [
+        "/photos/dogbreeder/dog1.png",
+        "/photos/dogbreeder/dog2.png"
+      ]
+    }
+  },
+  {
     "id": "deckbuilder",
     "title": "DeckBuilder Brasil",
     "subtitle": "App de Magic: The Gathering para Mac",
@@ -31,20 +45,6 @@
         "/photos/deckbuilder/db2.png",
         "/photos/deckbuilder/db3.png",
         "/photos/deckbuilder/db4.png"
-      ]
-    }
-  },
-  {
-    "id": "dogbreed",
-    "title": "DogBreedExplorer",
-    "subtitle": "Teste técnico de lista em SwiftUI",
-    "badges": ["SwiftUI", "REST", "MVVM"],
-    "highlight": "Lista de raças e tela de detalhe consumindo a Dog CEO API, uma API pública. Pull-to-refresh, loading, erro e cache de imagens.",
-    "githubUrl": "https://github.com/MaikonGithub/DogBreedExplorer",
-    "screenshots": {
-      "portrait": [
-        "/photos/dogbreeder/dog1.png",
-        "/photos/dogbreeder/dog2.png"
       ]
     }
   }
