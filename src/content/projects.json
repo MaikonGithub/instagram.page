@@ -20,9 +20,9 @@
   {
     "id": "dogbreed",
     "title": "DogBreedExplorer",
-    "subtitle": "Amostra técnica de lista iOS",
-    "badges": ["SwiftUI", "SwiftData", "SPM", "CI"],
-    "highlight": "Amostra de entrevista: lista raças da The Dog API, guarda uma cópia no aparelho e consulta essa cópia para busca, filtro, ordenação e favorito. O alvo do app só compõe. A regra fica em quatro bibliotecas — Domain, Networking, Storage e Breeds. Sem rede, a cópia permanece. Os testes sobem sem chave e sem chamar a API; o GitHub os roda a cada envio.",
+    "subtitle": "App de exemplo para processo seletivo",
+    "badges": ["Swift", "iOS", "SwiftUI"],
+    "highlight": "Um app simples, feito para mostrar como eu trabalho. Lista raças de cachorro, com busca, filtros, ordenação e favoritos. As informações ficam salvas no celular, então a lista continua disponível sem internet. O assunto é propositalmente comum. O que está em jogo é o cuidado com o app: organizado, testado e utilizável mesmo fora da rede.",
     "githubUrl": "https://github.com/MaikonGithub/DogBreedExplorer",
     "screenshots": {
       "portrait": [
